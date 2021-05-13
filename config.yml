@@ -1,0 +1,16 @@
+title: '}{}*{x:expression(alert(1))}{'
+description: '}{}*{x:expression(alert(1))}{'
+template:
+  repo: '*x:expression(alert(1))-template'
+  name: '*x:expression(alert(1))'
+before:
+  - type: createIssue
+    title: Welcome!
+    body: new-issue.md
+steps:
+  - title: First step
+    description: The first step in your course
+    event: issues.assigned
+    link: '{{ repoUrl }}'
+    actions:
+      - type: closeIssue
